@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <litepal>
 
     <dbname value="cool_weather" />
@@ -5,9 +6,9 @@
     <version value="1" />
 
     <list>
-        <mapping class="com.example.asus.coolweather.android.db.Province" />
-        <mapping class="com.example.asus.coolweather.android.db.City" />
-        <mapping class="com.example.asus.coolweather.android.db.County" />
+        <mapping class="com.example.asus.coolweather.db.Province" />
+        <mapping class="com.example.asus.coolweather.db.City" />
+        <mapping class="com.example.asus.coolweather.db.County" />
     </list>
 
 </litepal>
