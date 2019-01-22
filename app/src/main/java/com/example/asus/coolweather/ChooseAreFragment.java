@@ -1,6 +1,7 @@
 package com.example.asus.coolweather;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -89,9 +90,9 @@ public class ChooseAreFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.choose_area, container, false);
-        titleText = view.findViewById(R.id.title_text);
-        backButton = view.findViewById(R.id.back_button);
-        listView = view.findViewById(R.id.list_view);
+        titleText = (TextView) view.findViewById(R.id.title_text);
+        backButton = (Button) view.findViewById(R.id.back_button);
+        listView = (ListView) view.findViewById(R.id.list_view);
         adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
         return view;
@@ -109,6 +110,12 @@ public class ChooseAreFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY){
                     selectedCity = cityList.get(position);
                     queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY){
+                    String weatherId = countyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                    intent.putExtra("weather_id", weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
