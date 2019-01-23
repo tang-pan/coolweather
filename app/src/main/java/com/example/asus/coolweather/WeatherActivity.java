@@ -155,7 +155,7 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     /**
-     * 记载必应每日一周
+     * 加载必应每日一周
      */
     private void loadBingPic() {
         String requestBingPic = "http://guolin.tech/api/bing_pic";
@@ -183,7 +183,7 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     /**
-     *处理并展示Weather实体类中的数据
+     * 处理并展示Weather实体类中的数据
      * @param weather
      */
     private void showWeatherInfo(Weather weather) {
